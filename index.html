@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src='//whephiwums.com/sdk.js' data-zone='9123485' data-sdk='show_9123485'></script>
+    <script src='//whephiwums.com/sdk.js' data-zone='9172056' data-sdk='show_9172056'></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -291,6 +291,8 @@
             <h2>Rp<span id="balance">0.00</span></h2>
         </div>
     </div>
+    <div id="texs">Peringatan Wajib</div>
+    <div id="texs">1 Hp 1 Akun 1 IP</div>
 
     <button class="reward-button" onclick="showRewardedAd()">Watch Ad & Earn</button>
     <button class="reward-button clear-button" onclick="clearData()">Clear Data</button>
@@ -332,10 +334,10 @@
         document.getElementById('balance').textContent = balance.toFixed(3);
 
         function showRewardedAd() {
-            if (typeof show_9123485 === 'function') {
-                show_9123485().then(() => {
-                    rewardCount += 5;  
-                    balance += 0.005;  
+            if (typeof show_9172056 === 'function') {
+                show_9172056().then(() => {
+                    rewardCount += 1;  
+                    balance += 0.007;  
 
                     localStorage.setItem('rewardCount', rewardCount);
                     localStorage.setItem('balance', balance.toFixed(3));
@@ -377,23 +379,11 @@
         }
 
         createBubbles();
-function clearData() {
-            if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
-                rewardCount = 0;
-                balance = 0;
-                localStorage.removeItem("rewardCount");
-                localStorage.removeItem("balance");
-                document.getElementById("reward-count").innerText = "0";
-                document.getElementById("balance").innerText = "0.000";
-                alert("Data berhasil dihapus!");
-            } else {
-                alert("Penghapusan data dibatalkan.");
-            }
-        }
+
         
     // Rewarded Popup
 
-show_9123485('pop').then(() => {
+show_9172056('pop').then(() => {
     // user watch ad till the end or close it in interstitial format
     // your code to reward user for rewarded format
 }).catch(e => {
@@ -403,7 +393,7 @@ show_9123485('pop').then(() => {
 
     // In-App Interstitial 
 
-show_9123485({ 
+show_9172056({ 
   type: 'inApp', 
   inAppSettings: { 
     frequency: 1080, 
